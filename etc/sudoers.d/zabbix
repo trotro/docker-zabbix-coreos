@@ -1,1 +1,2 @@
 zabbix ALL=(ALL:ALL) NOPASSWD: /bin/netcat
+zabbix ALL=(ALL:ALL) NOPASSWD: /usr/local/bin/sas2ircu
