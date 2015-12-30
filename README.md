@@ -14,7 +14,7 @@ You can access the Docker REST API through the socket file */coreos/var/run/dock
 
 ### Build the image
 
-    # docker build -t bhuisgen/docker-zabbix-coreos .
+    # docker build -t ikoula/docker-zabbix-coreos .
 
 ### Configure your Zabbix server
 
@@ -50,6 +50,8 @@ If you want to access directly to the network stack of the node, you can use the
         -v /proc:/coreos/proc:ro -v /sys:/coreos/sys:ro -v /dev:/coreos/dev:ro \
         -v /var/run/docker.sock:/coreos/var/run/docker.sock \
         --name zabbix-coreos bhuisgen/docker-zabbix-coreos <SERVER> <HOSTMETADATA> [<HOSTNAME>]
+
+If you want to use SAS2IRCU for RAID monitoring, you need to run your container with --privileged
 
 The needed options are:
 
