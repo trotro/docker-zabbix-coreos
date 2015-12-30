@@ -20,8 +20,12 @@ RUN apt-get update && \
         ucf \
         procps \
         iproute \
+        wget \
         supervisor
 COPY etc/supervisor/ /etc/supervisor/
+
+RUN echo "deb http://hwraid.le-vert.net/debian wheezy main" > /etc/apt/sources.list.d/hwraid.le-vert.net.list
+RUN wget -qO - http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | apt-key add -
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
@@ -31,6 +35,7 @@ RUN apt-get update && \
         libldap-2.4-2 \
         netcat-openbsd \
         pciutils \
+        sas2ircu \
         sudo
 
 COPY files/zabbix-agent_2.2.7+dfsg-1.1_amd64.deb /root/
