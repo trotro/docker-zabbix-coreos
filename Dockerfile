@@ -24,8 +24,8 @@ RUN apt-get update && \
         supervisor
 COPY etc/supervisor/ /etc/supervisor/
 
-RUN echo "deb http://hwraid.le-vert.net/debian wheezy main" > /etc/apt/sources.list.d/hwraid.le-vert.net.list
-RUN wget -qO - http://hwraid.le-vert.net/debian/hwraid.le-vert.net.gpg.key | apt-key add -
+RUN echo "deb http://downloads.linux.hp.com/SDR/downloads/MCP wheezy/current non-free" >> /etc/apt/sources.list
+RUN wget -O -  http://downloads.linux.hp.com/SDR/repo/mcp/GPG-KEY-mcp | apt-key add -
 
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
@@ -35,7 +35,7 @@ RUN apt-get update && \
         libldap-2.4-2 \
         netcat-openbsd \
         pciutils \
-        sas2ircu \
+        hpacucli \
         sudo
 
 COPY files/zabbix-agent_2.2.7+dfsg-1.1_amd64.deb /root/
