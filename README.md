@@ -51,7 +51,7 @@ If you want to access directly to the network stack of the node, you can use the
         -v /var/run/docker.sock:/coreos/var/run/docker.sock \
         --name zabbix-coreos bhuisgen/docker-zabbix-coreos <SERVER> <HOSTMETADATA> [<HOSTNAME>]
 
-If you want to use SAS2IRCU for RAID monitoring, you need to run your container with --privileged
+If you want to use HPACUCLI for RAID monitoring, you need to run your container with --privileged
 
 The needed options are:
 
