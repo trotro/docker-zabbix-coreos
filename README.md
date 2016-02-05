@@ -52,6 +52,7 @@ If you want to access directly to the network stack of the node, you can use the
         --name zabbix-coreos ikoula/docker-zabbix-coreos <SERVER> <HOSTMETADATA> [<HOSTNAME>]
 
 If you want to use HPACUCLI for RAID monitoring, you need to run your container with --privileged
+NB : hpacucli needs sg kernel module to work
 
 The needed options are:
 
