@@ -42,14 +42,14 @@ To create the container:
     # docker run -d -p 10050:10050 -u 0 -c 1024 -m 64M --memory-swap=-1 \
         -v /proc:/coreos/proc:ro -v /sys:/coreos/sys:ro -v /dev:/coreos/dev:ro \
         -v /var/run/docker.sock:/coreos/var/run/docker.sock \
-        --name zabbix-coreos bhuisgen/docker-zabbix-coreos <SERVER> <HOSTMETADATA> [<HOSTNAME>]
+        --name zabbix-coreos ikoula/docker-zabbix-coreos <SERVER> <HOSTMETADATA> [<HOSTNAME>]
 
 If you want to access directly to the network stack of the node, you can use the *host* network mode but it is less secure:
 
     # docker run -d -p 10050:10050 -u 0 -c 1024 -m 64M --memory-swap=-1 --net="host" \
         -v /proc:/coreos/proc:ro -v /sys:/coreos/sys:ro -v /dev:/coreos/dev:ro \
         -v /var/run/docker.sock:/coreos/var/run/docker.sock \
-        --name zabbix-coreos bhuisgen/docker-zabbix-coreos <SERVER> <HOSTMETADATA> [<HOSTNAME>]
+        --name zabbix-coreos ikoula/docker-zabbix-coreos <SERVER> <HOSTMETADATA> [<HOSTNAME>]
 
 If you want to use SAS2IRCU for RAID monitoring, you need to run your container with --privileged
 
